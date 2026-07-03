@@ -20,29 +20,39 @@ export function Navbar() {
       : pathname.startsWith(href);
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-border/60 bg-background/80 backdrop-blur-xl">
-      <div className="container-page flex h-16 items-center justify-between gap-4">
+    <header className="sticky top-0 z-50 w-full border-b border-border/60 bg-background/90 backdrop-blur-xl supports-[backdrop-filter]:bg-background/80">
+      <div className="container-page flex h-[72px] items-center justify-between gap-8">
         <Logo />
 
         {/* Desktop Navigation */}
         <nav
-          aria-label="Primary Navigation"
-          className="hidden items-center gap-1 lg:flex"
-        >
-          {nav.map((item) => (
-            <Link
-              key={item.to}
-              href={item.to}
-              className={`rounded-md px-3 py-2 text-sm font-medium transition-colors ${
-                isActive(item.to)
-                  ? "text-foreground"
-                  : "text-muted-foreground hover:text-foreground"
-              }`}
-            >
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+  aria-label="Primary Navigation"
+  className="hidden items-center gap-2 lg:flex"
+>
+  {nav.map((item) => {
+    const active = isActive(item.to);
+
+    return (
+      <Link
+        key={item.to}
+        href={item.to}
+        className={`relative rounded-lg px-4 py-2 text-[15px] font-medium transition-all duration-200 ${
+          active
+            ? "text-primary"
+            : "text-muted-foreground hover:text-primary"
+        }`}
+      >
+        {item.label}
+
+        <span
+          className={`absolute bottom-0 left-4 right-4 h-0.5 rounded-full bg-primary transition-all duration-300 ${
+            active ? "scale-x-100" : "scale-x-0"
+          }`}
+        />
+      </Link>
+    );
+  })}
+</nav>
 
         {/* Desktop Actions */}
         <div className="flex items-center gap-2">
