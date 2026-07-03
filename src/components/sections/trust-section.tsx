@@ -1,10 +1,10 @@
 export function TrustSection() {
   const audiences = [
-    "Career Switchers",
-    "CSE Graduates",
-    "Junior QAs",
-    "Freelancers",
-    "Corporate Teams",
+    "6+ Years Experience",
+    "Real Industry Projects",
+    "Live Mentorship",
+    "Career Support",
+    "Community",
   ];
 
   return (

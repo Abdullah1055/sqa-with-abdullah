@@ -23,21 +23,22 @@ export function HeroSection() {
         <div className="mx-auto max-w-3xl text-center">
           <div className="flex justify-center">
             <SectionEyebrow>
-              New batch enrolling · Live cohort
+              Next Live Batch • Enrollment Open
             </SectionEyebrow>
           </div>
 
-          <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl lg:text-7xl">
-            Practical Software Testing training,{" "}
+          <h1 className="mt-6 text-4xl font-bold tracking-tight text-foreground sm:text-4xl md:text-5xl lg:text-6xl">
+            Master Software Testing,{" "}
             <span className="bg-gradient-to-r from-primary to-info bg-clip-text text-transparent">
-              built on real projects
+              From Beginner to Job-Ready QA Engineer
             </span>
           </h1>
 
           <p className="mx-auto mt-6 max-w-2xl text-base text-muted-foreground md:text-lg">
-            Learn manual and automation QA the way it&apos;s actually done in
-            industry — with the tools, habits, and career preparation that get
-            you hired.
+            Master Manual Testing, Automation Testing,
+API Testing, Performance Testing, and real-world QA
+workflows through live projects, expert mentorship,
+and career-focused training.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
