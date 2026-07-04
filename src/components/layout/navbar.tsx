@@ -36,7 +36,7 @@ export function Navbar() {
       <Link
         key={item.to}
         href={item.to}
-        className={`relative rounded-lg px-4 py-2 text-[15px] font-medium transition-all duration-200 ${
+        className={`relative rounded-lg px-5 py-2.5 text-[17px] font-medium transition-all duration-200 ${
           active
             ? "text-primary"
             : "text-muted-foreground hover:text-primary"
@@ -55,13 +55,7 @@ export function Navbar() {
 </nav>
 
         {/* Desktop Actions */}
-        <div className="flex items-center gap-2">
-          <Link
-            href="/login"
-            className="hidden text-sm font-medium text-muted-foreground hover:text-foreground sm:inline-flex"
-          >
-            Log in
-          </Link>
+        <div className="flex shrink-0 items-center gap-5">
 
           <Button
             asChild
