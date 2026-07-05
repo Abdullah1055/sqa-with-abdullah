@@ -10,7 +10,7 @@ export function TrustSection() {
   return (
     <section className="py-12 lg:py-16">
       <div className="container-page">
-        <div className="mx-auto max-w-3xl text-center">
+        <div className="mx-auto max-w-7xl text-center">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-primary">
             Why Learn With Us
           </p>
@@ -30,7 +30,7 @@ export function TrustSection() {
           {highlights.map((item) => (
             <div
               key={item}
-              className="rounded-2xl border border-border bg-background px-5 py-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:shadow-md"
+              className="group cursor-pointer rounded-2xl border border-border bg-white px-5 py-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:shadow-xl"
             >
               <p className="text-sm font-semibold text-foreground">{item}</p>
             </div>
