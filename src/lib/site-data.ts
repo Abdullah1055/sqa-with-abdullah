@@ -12,10 +12,10 @@ export const site = {
   email: "hello@sqawithabdullah.com",
   location: "Dhaka, Bangladesh",
   social: {
-    youtube: "https://youtube.com/@sqawithabdullah",
+    youtube: "https://www.youtube.com/channel/UC0S6x0fguhHh9Zb7V6Lx4IA",
     linkedin: "https://linkedin.com/in/sqawithabdullah",
     github: "https://github.com/sqawithabdullah",
-    facebook: "https://facebook.com/sqawithabdullah",
+    facebook: "https://www.facebook.com/people/Sqa_with_abdullah/100088666096163/",
     x: "https://x.com/sqawithabdullah",
   },
 } as const;

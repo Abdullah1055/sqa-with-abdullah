@@ -1,9 +1,15 @@
 import Link from "next/link";
-import { Globe, Mail, MapPin } from "lucide-react";
-
 import { Logo } from "@/components/common/logo";
 import { Newsletter } from "@/components/sections/newsletter";
 import { site } from "@/lib/site-data";
+import { Mail, MapPin } from "lucide-react";
+
+import {
+  FaYoutube,
+  FaLinkedin,
+  FaGithub,
+  FaFacebook,
+} from "react-icons/fa6";
 
 const columns = [
   {
@@ -37,28 +43,27 @@ const columns = [
 const socialLinks = [
   {
     href: site.social.youtube,
-    icon: Globe,
+    icon: FaYoutube,
     label: "YouTube",
+    color: "text-red-600 hover:text-red-700",
   },
   {
     href: site.social.linkedin,
-    icon: Globe,
+    icon: FaLinkedin,
     label: "LinkedIn",
+    color: "text-sky-600 hover:text-sky-700",
   },
   {
     href: site.social.github,
-    icon: Globe,
+    icon: FaGithub,
     label: "GitHub",
+    color: "text-gray-600 hover:text-gray-700",
   },
   {
     href: site.social.facebook,
-    icon: Globe,
+    icon: FaFacebook,
     label: "Facebook",
-  },
-  {
-    href: site.social.x,
-    icon: Globe,
-    label: "X",
+    color: "text-blue-600 hover:text-blue-700",
   },
 ] as const;
 
@@ -87,16 +92,16 @@ export function Footer() {
             </div>
 
             <div className="flex items-center gap-2 pt-2">
-              {socialLinks.map(({ href, icon: Icon, label }) => (
+              {socialLinks.map(({ href, icon: Icon, label, color }) => (
                 <a
                   key={label}
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={label}
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+                  className="grid h-10 w-10 place-items-center rounded-xl border border-border bg-background text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary hover:bg-primary hover:text-primary-foreground hover:shadow-md"
                 >
-                  <Icon className="h-4 w-4" aria-hidden="true" />
+                  <Icon className={`h-5 w-5 ${color}`} />
                 </a>
               ))}
             </div>
