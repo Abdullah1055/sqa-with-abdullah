@@ -8,9 +8,9 @@ export const site = {
   description:
     "Practical Software Quality Assurance training built on real industry projects. Learn manual and automation testing, career preparation, and modern QA workflows.",
   url: "https://sqawithabdullah.com",
-  author: "Abdullah",
-  email: "hello@sqawithabdullah.com",
-  location: "Dhaka, Bangladesh",
+  author: "Abdullah Al Baky",
+  email: "sqa.abdullah2022@gmail.com",
+  location: "Mirpur, Dhaka, Bangladesh",
   social: {
     youtube: "https://www.youtube.com/channel/UC0S6x0fguhHh9Zb7V6Lx4IA",
     linkedin: "https://linkedin.com/in/sqawithabdullah",
