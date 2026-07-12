@@ -12,19 +12,36 @@ export async function signOut() {
 
   revalidatePath("/", "layout");
 
-  redirect("/login");
+  redirect("/auth/login");
 }
 
 export async function signUp(formData: FormData) {
   const supabase = await createClient();
 
   const fullName = formData.get("fullName")?.toString().trim() ?? "";
-  const email = formData.get("email")?.toString().trim() ?? "";
+  const email = formData.get("email")?.toString().trim().toLowerCase() ?? "";
   const password = formData.get("password")?.toString() ?? "";
+  const confirmPassword =
+    formData.get("confirmPassword")?.toString() ?? "";
 
-  if (!fullName || !email || !password) {
+  // Required field validation
+  if (!fullName || !email || !password || !confirmPassword) {
     return {
       error: "All fields are required.",
+    };
+  }
+
+  // Password validation
+  if (password.length < 8) {
+    return {
+      error: "Password must be at least 8 characters long.",
+    };
+  }
+
+  // Confirm password validation
+  if (password !== confirmPassword) {
+    return {
+      error: "Passwords do not match.",
     };
   }
 
@@ -47,6 +64,7 @@ export async function signUp(formData: FormData) {
   revalidatePath("/", "layout");
 
   return {
-    success: "Your account has been created. Please check your email to verify your account.",
+    success:
+      "Account created successfully. Please check your email to verify your account.",
   };
 }

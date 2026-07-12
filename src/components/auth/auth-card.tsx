@@ -8,8 +8,8 @@ interface AuthCardProps {
 
 export function AuthCard({ children }: AuthCardProps) {
   return (
-    <Card className="border-border/50 shadow-lg">
-      <CardContent className="p-8">
+    <Card className="w-full border-border/50 shadow-2xl">
+      <CardContent className="p-8 md:p-10">
         {children}
       </CardContent>
     </Card>

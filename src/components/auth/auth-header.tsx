@@ -13,7 +13,7 @@ export function AuthHeader({
         {title}
       </h1>
 
-      <p className="mt-2 text-muted-foreground">
+      <p className="mt-3 text-sm text-muted-foreground">
         {description}
       </p>
     </div>
