@@ -14,3 +14,39 @@ export async function signOut() {
 
   redirect("/login");
 }
+
+export async function signUp(formData: FormData) {
+  const supabase = await createClient();
+
+  const fullName = formData.get("fullName")?.toString().trim() ?? "";
+  const email = formData.get("email")?.toString().trim() ?? "";
+  const password = formData.get("password")?.toString() ?? "";
+
+  if (!fullName || !email || !password) {
+    return {
+      error: "All fields are required.",
+    };
+  }
+
+  const { error } = await supabase.auth.signUp({
+    email,
+    password,
+    options: {
+      data: {
+        full_name: fullName,
+      },
+    },
+  });
+
+  if (error) {
+    return {
+      error: error.message,
+    };
+  }
+
+  revalidatePath("/", "layout");
+
+  return {
+    success: "Your account has been created. Please check your email to verify your account.",
+  };
+}
