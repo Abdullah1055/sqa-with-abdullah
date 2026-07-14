@@ -91,3 +91,17 @@ export function RegisterForm() {
     </AuthCard>
   );
 }
+<div className="space-y-2">
+  <Label htmlFor="confirmPassword">
+    Confirm Password
+  </Label>
+
+  <Input
+    id="confirmPassword"
+    name="confirmPassword"
+    type="password"
+    autoComplete="new-password"
+    minLength={8}
+    required
+  />
+</div>
