@@ -24,28 +24,25 @@ export async function signUp(formData: FormData) {
   const confirmPassword =
     formData.get("confirmPassword")?.toString() ?? "";
 
-  // Required field validation
   if (!fullName || !email || !password || !confirmPassword) {
     return {
       error: "All fields are required.",
     };
   }
 
-  // Password validation
   if (password.length < 8) {
     return {
       error: "Password must be at least 8 characters long.",
     };
   }
 
-  // Confirm password validation
   if (password !== confirmPassword) {
     return {
       error: "Passwords do not match.",
     };
   }
 
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
@@ -55,7 +52,14 @@ export async function signUp(formData: FormData) {
     },
   });
 
+  console.log("========== SIGNUP DEBUG ==========");
+  console.log("DATA:", data);
+  console.log("ERROR:", error);
+  console.log("==================================");
+
   if (error) {
+    console.error("Supabase SignUp Error:", error);
+
     return {
       error: error.message,
     };
