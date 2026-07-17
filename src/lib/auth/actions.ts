@@ -72,3 +72,31 @@ export async function signUp(formData: FormData) {
       "Account created successfully. Please check your email to verify your account.",
   };
 }
+
+export async function signIn(formData: FormData) {
+  const supabase = await createClient();
+
+  const email = formData.get("email")?.toString().trim().toLowerCase() ?? "";
+  const password = formData.get("password")?.toString() ?? "";
+
+  if (!email || !password) {
+    return {
+      error: "Email and password are required.",
+    };
+  }
+
+  const { error } = await supabase.auth.signInWithPassword({
+    email,
+    password,
+  });
+
+  if (error) {
+    return {
+      error: error.message,
+    };
+  }
+
+  revalidatePath("/", "layout");
+
+  redirect("/dashboard");
+}
