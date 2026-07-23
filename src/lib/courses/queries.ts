@@ -1,0 +1,7 @@
+getCourses()
+
+getCourseBySlug()
+
+getEnrolledCourses()
+
+getCourseProgress()
