@@ -1,5 +1,7 @@
 import type { ReactNode } from "react";
 
+import { DashboardShell } from "@/components/dashboard/dashboard-shell";
+
 interface DashboardLayoutProps {
   children: ReactNode;
 }
@@ -8,8 +10,8 @@ export default function DashboardLayout({
   children,
 }: DashboardLayoutProps) {
   return (
-    <main className="min-h-screen bg-background">
+    <DashboardShell>
       {children}
-    </main>
+    </DashboardShell>
   );
 }

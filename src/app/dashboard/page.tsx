@@ -1,12 +1,12 @@
 export default function DashboardPage() {
   return (
-    <div className="p-10">
-      <h1 className="text-3xl font-bold">
+    <div>
+      <h1 className="text-3xl font-bold tracking-tight">
         Student Dashboard
       </h1>
 
-      <p className="mt-4 text-muted-foreground">
-        Welcome to SQA with Abdullah.
+      <p className="mt-2 text-muted-foreground">
+        Welcome back! Continue your learning journey with SQA with Abdullah.
       </p>
     </div>
   );
